@@ -14,7 +14,7 @@ var paths = {
     scripts: 'src/app/**/*.js',
     styles: 'src/less/**/*.*',
     images: 'src/img/**/*.*',
-    templates: 'src/templates/**/*.html',
+    templates: 'src/app/**/*.html',
     index: 'src/index.html',
     bower_fonts: 'bower_components/**/*.{ttf,woff,woff2,eof,svg}',
 };
@@ -57,7 +57,7 @@ gulp.task('custom-images', function() {
 gulp.task('custom-js', function() {
     return gulp.src(paths.scripts)
         .pipe(minifyJs())
-        .pipe(concat('dashboard.min.js'))
+        .pipe(concat('custom.min.js'))
         .pipe(gulp.dest('dist/js'));
 });
 
