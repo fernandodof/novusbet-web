@@ -9,7 +9,7 @@
   <!-- build:css lib/css/vendor.min.css -->
   <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../bower_components/rdash-ui/dist/css/rdash.min.css">
+  <link rel="stylesheet" type="text/css" href="../bower_components/rdash-ui/dist/css/rdash.css">
   <!-- endbuild -->
   <!-- SCRIPTS -->
   <!-- build:js lib/js/vendor.min.js -->
@@ -24,79 +24,18 @@
 <body ng-controller="MasterCtrl">
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
 
-  <ui-view name="sidebar"></ui-view>
+    <ui-view name="sidebar"></ui-view>
     
     <div id="content-wrapper">
       <div class="page-content">
 
-        <!-- Header Bar -->
-        <div class="row header">
-          <div class="col-xs-12">
-            <div class="user pull-right">
-              <div class="item dropdown" uib-dropdown>
-                <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
-                  <img src="img/avatar.jpg">
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="dropdown-header">
-                    Joe Bloggs
-                  </li>
-                  <li class="divider"></li>
-                  <li class="link">
-                    <a href="#">
-                      Profile
-                    </a>
-                  </li>
-                  <li class="link">
-                    <a href="#">
-                      Menu Item
-                    </a>
-                  </li>
-                  <li class="link">
-                    <a href="#">
-                      Menu Item
-                    </a>
-                  </li>
-                  <li class="divider"></li>
-                  <li class="link">
-                    <a href="#">
-                      Logout
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="item dropdown" uib-dropdown>
-               <a href="#" class="dropdown-toggle" uib-dropdown-toggle>
-                <i class="fa fa-bell-o"></i>
-              </a>
-              <ul class="dropdown-menu dropdown-menu-right">
-                <li class="dropdown-header">
-                  Notifications
-                </li>
-                <li class="divider"></li>
-                <li>
-                  <a href="#">Server Down!</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="meta">
-            <div class="page">
-              Dashboard
-            </div>
-            <div class="breadcrumb-links">
-              Home / Dashboard
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- End Header Bar -->
+       <ui-view name="header"></ui-view>
 
-      <!-- Main Content -->
-      <ui-view name="main"></ui-view>
+       <!-- Main Content -->
+       <ui-view name="main"></ui-view>
 
-    </div><!-- End Page Content -->
-  </div><!-- End Content Wrapper -->
-</div><!-- End Page Wrapper -->
+     </div><!-- End Page Content -->
+   </div><!-- End Content Wrapper -->
+ </div><!-- End Page Wrapper -->
 </body>
 </html>

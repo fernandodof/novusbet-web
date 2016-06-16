@@ -11,36 +11,41 @@
             // For unmatched routes
             $urlRouterProvider.otherwise('/');
 
-            var baseViews = { 
-                sidebar: {
-                    templateUrl: 'templates/sidebar/sidebar.html'
-                }
-            };
-
             // Application routes
             $stateProvider
-            .state('index', {
-                url: '/',
-                views:{
-                    sidebar: {
-                        templateUrl: 'templates/sidebar/sidebar.html'
-                    },
-                    main: {
-                        templateUrl: 'templates/dashboard/dashboard.html'
+                .state('root',{
+                    url: '',
+                    abstract: true,
+                    views: {
+                        sidebar: {
+                            templateUrl: 'templates/sidebar/sidebar.html'
+                        },
+                        header: {
+                            templateUrl: 'templates/header/header.html'
+                        },
+                        'main@' : {
+                            templateUrl: ''
+                        }
                     }
-                }
-            })
-            .state('tables', {
-                url: '/tables',
-                views: {                
-                    sidebar: {
-                        templateUrl: 'templates/sidebar/sidebar.html'
-                    },
-                    main:{
-                        templateUrl: 'templates/tables/tables.html'
+                })
+                .state('index', {
+                    url: '/',
+                    parent: 'root',
+                    views:{
+                        main: {
+                            templateUrl: 'templates/dashboard/dashboard.html'
+                        }
                     }
-                }
-            });
+                })
+                .state('tables', {
+                    url: '/tables',
+                    parent: 'root',
+                    views: {                
+                        main:{
+                            templateUrl: 'templates/tables/tables.html'
+                        }
+                    }
+                });
         }
         ]);
  })();
