@@ -1,3 +1,7 @@
-#main-content {
+#page-wrapper.open #main-content {
 	margin-left: -125px;
+}
+
+#page-wrapper #main-content {
+	margin-left: -35px;
 }
