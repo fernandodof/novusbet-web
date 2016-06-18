@@ -11,15 +11,7 @@
   <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/rdash-ui/dist/css/rdash.css">
   <!-- endbuild -->
-  <!-- SCRIPTS -->
-  <!-- build:js lib/js/vendor.min.js -->
-  <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
-  <script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
-  <script type="text/javascript" src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
-  <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-  <!-- endbuild -->
-  <!-- Custom Scripts -->
-  <script type="text/javascript" src="js/custom.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
 </head>
 <body ng-controller="MasterCtrl">
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
@@ -32,10 +24,22 @@
        <ui-view name="header"></ui-view>
 
        <!-- Main Content -->
-       <ui-view name="main"></ui-view>
+       <div id="main-content">
+        <ui-view name="main"></ui-view>
+      </div>
 
-     </div><!-- End Page Content -->
-   </div><!-- End Content Wrapper -->
- </div><!-- End Page Wrapper -->
+    </div><!-- End Page Content -->
+  </div><!-- End Content Wrapper -->
+</div><!-- End Page Wrapper -->
+<!-- SCRIPTS -->
+<!-- build:js lib/js/vendor.min.js -->
+<script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-cookies/angular-cookies.min.js"></script>
+<script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<!-- endbuild -->
+<!-- Custom Scripts -->
+<script type="text/javascript" src="js/custom.min.js"></script>
+
 </body>
 </html>

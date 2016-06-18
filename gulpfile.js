@@ -3,20 +3,20 @@ var gulp = require('gulp'),
     wrap = require('gulp-wrap'),
     connect = require('gulp-connect'),
     watch = require('gulp-watch'),
-    minifyCss = require('gulp-cssnano'),
     minifyJs = require('gulp-uglify'),
     concat = require('gulp-concat'),
-    less = require('gulp-less'),
+    sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     minifyHTML = require('gulp-htmlmin');
+    cleanCSS = require('gulp-clean-css');
 
 var paths = {
     scripts: 'src/app/**/*.js',
-    styles: 'src/less/**/*.*',
     images: 'src/img/**/*.*',
     templates: 'src/app/**/*.html',
     index: 'src/index.html',
     bower_fonts: 'bower_components/**/*.{ttf,woff,woff2,eof,svg}',
+    styles : 'src/styles/sass/*.scss',
 };
 
 /**
@@ -26,7 +26,7 @@ gulp.task('usemin', function() {
     return gulp.src(paths.index)
         .pipe(usemin({
             js: [minifyJs(), 'concat'],
-            css: [minifyCss({keepSpecialComments: 0}), 'concat'],
+            css: [cleanCSS({compatibility: 'ie8'}), 'concat'],
         }))
         .pipe(gulp.dest('dist/'));
 });
@@ -47,7 +47,7 @@ gulp.task('copy-bower_fonts', function() {
 /**
  * Handle custom files
  */
-gulp.task('build-custom', ['custom-images', 'custom-js', 'custom-less', 'custom-templates']);
+gulp.task('build-custom', ['custom-images', 'custom-js', 'custom-sass', 'custom-templates']);
 
 gulp.task('custom-images', function() {
     return gulp.src(paths.images)
@@ -61,10 +61,18 @@ gulp.task('custom-js', function() {
         .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('custom-less', function() {
-    return gulp.src(paths.styles)
-        .pipe(less())
+gulp.task('custom-sass', function() {
+    return  gulp
+        .src(paths.styles)
+        .pipe(sass()
+        .on('error', sass.logError))
+        .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest('dist/css'));
+});
+
+gulp.task('custom-sass:watch', function ( ) {
+    gulp.start('custom-sass');
+    gulp.watch(paths.styles, ['custom-sass']);
 });
 
 gulp.task('custom-templates', function() {
@@ -78,7 +86,7 @@ gulp.task('custom-templates', function() {
  */
 gulp.task('watch', function() {
     gulp.watch([paths.images], ['custom-images']);
-    gulp.watch([paths.styles], ['custom-less']);
+    gulp.watch([paths.styles], ['custom-sass']);
     gulp.watch([paths.scripts], ['custom-js']);
     gulp.watch([paths.templates], ['custom-templates']);
     gulp.watch([paths.index], ['usemin']);
