@@ -16,7 +16,7 @@ var paths = {
     templates: 'src/app/**/*.html',
     index: 'src/index.html',
     bower_fonts: 'bower_components/**/*.{ttf,woff,woff2,eof,svg}',
-    styles : 'src/styles/sass/*.scss',
+    styles : 'src/styles/sass/**/*.scss',
 };
 
 /**
@@ -70,10 +70,10 @@ gulp.task('custom-sass', function() {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('custom-sass:watch', function ( ) {
-    gulp.start('custom-sass');
-    gulp.watch(paths.styles, ['custom-sass']);
-});
+// gulp.task('custom-sass:watch', function ( ) {
+//     gulp.start('custom-sass');
+//     gulp.watch(paths.styles, ['custom-sass']);
+// });
 
 gulp.task('custom-templates', function() {
     return gulp.src(paths.templates)
