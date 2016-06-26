@@ -22,6 +22,7 @@ body.rdash{
 	}
 
 	ul.sidebar {
+
 		li a {
 			color: #fff;
 		}
@@ -49,11 +50,12 @@ body.rdash{
 		}
 
 		.widget {
-			border-color: #e9e9e9;
+			border-color: red;
 
 			.widget-header {
 				color: #767676;
 				background-color: #f6f6f6;
+				border-bottom: 1px solid red;
 			}
 
 			.widget-body .error {

@@ -4,17 +4,17 @@ body.light-theme {
 	#page-wrapper{
 
 		.row.header .user > .item a {
-			color: #919191;
+			color: light-theme('header-dropdown-link');
 		}
 
 		//Loading directive
 		.double-bounce1,
 		.double-bounce2 {
-			background-color: blue;
+			background-color: light-theme('loader');
 		}
 
 		#sidebar-wrapper {
-			background: #C3C3C4;
+			background: light-theme('sidebar-wrapper');
 		}
 
 
@@ -23,57 +23,63 @@ body.light-theme {
 		ul.sidebar .sidebar-main a,
 		ul.sidebar .sidebar-list a:hover,
 		&:not(.open) ul.sidebar .sidebar-title.separator {
-			background: #7A7A7A;
+			background: light-theme('sidebar-header-footer-background');
 		}
 
 		&:not(.open) ul.sidebar .sidebar-list a:hover span {
-			border-left: 3px solid #FFFFFF;
+			border-left: 3px solid light-theme('sidebar-left-border');
 		}
 
 		ul.sidebar {
 			li a {
-				color: #FFFFFF;
+				color: light-theme('sidebar-header');
+				text-indent: 25px;
 			}
 
 			.sidebar-title {
-				color: #443232;
+				color: light-theme('sidebar-title');
 			}
 
 			.sidebar-list a {
-				color: #443232;
+				color: light-theme('sidebar-link');
 			}
 
-			.sidebar-list a:hover {
-				color: #fff;
-				border-left: 3px solid #FFFFFF;
+			.sidebar-list {
+				a:hover, a.active, a.active:hover {
+					color: light-theme('sidebar-link-hover-active');
+					border-left: 3px solid light-theme('sidebar-left-border');
+					background: light-theme('sidebar-header-footer-background');
+					text-indent: 25px;
+				}
+
 			}
 
 		}
 
 		.sidebar-footer div {
 			a {
-				color: #D1D1D1;
+				color: light-theme('sidebar-footer-link');
 			}
 
 			a:hover {
-				color: #ffffff;
+				color: light-theme('sidebar-footer-link-active');
 			}
 		}
 
 		.widget {
-			border-color: #e9e9e9;
+			border-color: light-theme('widget-border');
 
 			.widget-header {
-				color: #767676;
-				background-color: #f6f6f6;
+				color: light-theme('widget-header');
+				background-color: light-theme('widget-header-background');
 			}
 
 			.widget-body .error {
-				color: #ff0000;
+				color: light-theme('widget-error');
 			}
 
 			.widget-icon i {
-				color: #ffffff;
+				color: light-theme('light-theme');
 			}
 
 		}
