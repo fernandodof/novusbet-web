@@ -1,10 +1,15 @@
 body.light-theme {
-	color: #333333 !important;
+	color: light-theme('font');
+	background-color: light-theme('body-background');
 
 	#page-wrapper{
 
-		.row.header .user > .item a {
-			color: light-theme('header-dropdown-link');
+		.row.header {
+			background: light-theme('header-background');
+
+			.user > .item a {
+				color: light-theme('header-dropdown-link');
+			}
 		}
 
 		//Loading directive

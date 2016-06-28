@@ -1,4 +1,7 @@
 $light-theme-colors: (
+	'font' : #333333,
+	'body-background': #F1F1F1,
+	'header-background': #FFFFFF,
 	'header-dropdown-link': #919191,
 	'loader': #436CB9,
 	'sidebar-wrapper' : #C3C3C4,
@@ -19,4 +22,56 @@ $light-theme-colors: (
 
 @function light-theme($key){
 	@return map-get($light-theme-colors, $key);
+}
+
+$blue-theme-colors: (
+	'font' : #333333,
+	'body-background': #F1F1F1,
+	'header-background': #3C8DBC,
+	'header-dropdown-link': #919191,
+	'loader': #436CB9,
+	'sidebar-wrapper' : #C3C3C4,
+	'sidebar-header-footer-background': #357CA5,
+	'sidebar-left-border': #FFFFFF,
+	'sidebar-header': #FFFFFF,
+	'sidebar-title': #443232,
+	'sidebar-link': #443232,
+	'sidebar-link-hover-active' : #FFFFFF,
+	'sidebar-footer-link': #D1D1D1,
+	'sidebar-footer-link-active': #FFFFFF,
+	'widget-border': #E9E9E9,
+	'widget-header': #767676,
+	'widget-header-background': #F6F6F6,
+	'widget-error': #FF0000,
+	'widget-icon': #FFFFFF
+);
+
+@function light-blue-theme($key){
+	@return map-get($blue-theme-colors, $key);
+}
+
+$blue-theme-colors: (
+	'font' : #333333,
+	'body-background': #F1F1F1,
+	'header-background': #F39C12,
+	'header-dropdown-link': #919191,
+	'loader': #436CB9,
+	'sidebar-wrapper' : #1E282C,
+	'sidebar-header-footer-background': #DB8B0B,
+	'sidebar-left-border': #FFFFFF,
+	'sidebar-header': #FFFFFF,
+	'sidebar-title': #FFFFFF,
+	'sidebar-link': #F2F2F2,
+	'sidebar-link-hover-active' : #FFFFFF,
+	'sidebar-footer-link': #D1D1D1,
+	'sidebar-footer-link-active': #FFFFFF,
+	'widget-border': #E9E9E9,
+	'widget-header': #767676,
+	'widget-header-background': #F6F6F6,
+	'widget-error': #FF0000,
+	'widget-icon': #FFFFFF
+);
+
+@function yellow-theme($key){
+	@return map-get($blue-theme-colors, $key);
 }
