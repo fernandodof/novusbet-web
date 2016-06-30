@@ -18,10 +18,10 @@
                     abstract: true,
                     views: {
                         sidebar: {
-                            templateUrl: 'templates/sidebar/sidebar.html'
+                            templateUrl: 'templates/shared/sidebar/sidebar.html'
                         },
                         header: {
-                            templateUrl: 'templates/header/header.html'
+                            templateUrl: 'templates/shared/header/header.html'
                         },
                         'main@' : {
                             templateUrl: ''
@@ -33,7 +33,7 @@
                     parent: 'root',
                     views:{
                         main: {
-                            templateUrl: 'templates/dashboard/dashboard.html'
+                            templateUrl: 'templates/shared/dashboard/dashboard.html'
                         }
                     }
                 })
@@ -42,7 +42,18 @@
                     parent: 'root',
                     views: {                
                         main:{
-                            templateUrl: 'templates/tables/tables.html'
+                            templateUrl: 'templates/shared/dashboard/dashboard.html'
+                        }
+                    }
+                })
+                .state('modals', {
+                    url: '/modals',
+                    parent: 'root',
+                    views: {                
+                        main:{
+                            templateUrl: 'templates/components/modals-test/modal-test.html',
+                            controller: 'ModalTest',
+                            controllerAs : 'ctrl'
                         }
                     }
                 });

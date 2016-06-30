@@ -1,3 +1,7 @@
 (function(){
-	angular.module('upFrota', ['ui.bootstrap', 'ui.router', 'ngCookies']);
+	angular.module('upFrota', [
+		'ui.bootstrap', 
+		'ui.router', 
+		'ngCookies'
+	]);
 })();

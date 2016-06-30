@@ -47,10 +47,10 @@ $blue-theme-colors: (
 );
 
 @function light-blue-theme($key){
-	@return map-get($blue-theme-colors, $key);
+	@return map-get($light-theme-colors, $key);
 }
 
-$blue-theme-colors: (
+$yellow-theme-colors: (
 	'font' : #333333,
 	'body-background': #F1F1F1,
 	'header-background': #F39C12,
@@ -73,5 +73,5 @@ $blue-theme-colors: (
 );
 
 @function yellow-theme($key){
-	@return map-get($blue-theme-colors, $key);
+	@return map-get($yellow-theme-colors, $key);
 }
