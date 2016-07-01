@@ -42,7 +42,7 @@
                     parent: 'root',
                     views: {                
                         main:{
-                            templateUrl: 'templates/shared/dashboard/dashboard.html'
+                            templateUrl: 'templates/shared/tables/tables.html'
                         }
                     }
                 })

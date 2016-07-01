@@ -1,12 +1,10 @@
-<div class="modal-header">
-  <h3>{{modalOptions.headerText}}</h3>
+<div class="modal-header no-padding-top-bottom bg-{{modalOptions.type}}">
+  <h4 ng-bind="modalOptions.headerText"></h4>
 </div>
 <div class="modal-body">
-  <p>{{modalOptions.bodyText}}</p>
+  <p ng-bind="modalOptions.bodyText"></p>
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn" 
-          data-ng-click="modalOptions.close()">{{modalOptions.closeButtonText}}</button>
-  <button class="btn btn-primary" 
-          data-ng-click="modalOptions.ok();">{{modalOptions.actionButtonText}}</button>
+<div class="modal-footer padding-top-10 padding-bottom-10">
+  <button type="button" class="btn" data-ng-click="modalOptions.close()" ng-if="modalOptions.showCancel" ng-bind="modalOptions.closeButtonText"></button>
+  <button class="btn btn-primary" data-ng-click="modalOptions.ok();" ng-bind="modalOptions.actionButtonText"></button>
 </div>

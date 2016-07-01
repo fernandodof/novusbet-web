@@ -6,34 +6,46 @@ function UfModalAlertService($uibModal) {
 
     var self = this;
 
-    var modalDefaults = {
+    self.modalDefaults = {
         backdrop: 'static',
         keyboard: true,
         modalFade: true,
         templateUrl: 'templates/shared/modal-alert/UfModalAlertTemplate.html'
     };
 
-    var modalOptions = {
+    self.modalOptions = {
         closeButtonText: 'Close',
         actionButtonText: 'OK',
         headerText: 'Confirm',
         bodyText: 'Perform action?',
+        showCancel: false,
+        type: ''
     };
 
-    self.showModal = function (customModalOptions, customModalDefaults) {
+    self.confirm = function (customModalOptions, customModalDefaults) {
+        self.modalOptions.showCancel = true; 
         if (!customModalDefaults) {
             customModalDefaults = {};
         }
 
-        return this.show(customModalDefaults, customModalOptions);
+        return self.show(customModalDefaults, customModalOptions);
+    };
+
+    self.alert = function (customModalOptions, customModalDefaults) {
+        self.modalOptions.showCancel = false;
+        if (!customModalDefaults) {
+            customModalDefaults = {};
+        }
+
+        return self.show(customModalDefaults, customModalOptions);
     };
 
     self.show = function (customModalDefaults, customModalOptions) {
         var tempModalDefaults = {};
         var tempModalOptions = {};
 
-        angular.extend(tempModalDefaults, modalDefaults, customModalDefaults);
-        angular.extend(tempModalOptions, modalOptions, customModalOptions);
+        angular.extend(tempModalDefaults, self.modalDefaults, customModalDefaults);
+        angular.extend(tempModalOptions, self.modalOptions, customModalOptions);
 
         if (!tempModalDefaults.controller) {
             tempModalDefaults.controller = modalCtrl;
