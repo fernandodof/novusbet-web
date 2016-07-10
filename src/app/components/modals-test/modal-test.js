@@ -1,8 +1,8 @@
 angular.module('upFrota').controller('ModalTest', modalTestCtrl);
 
-modalTestCtrl.$inject = ['UfModalAlertService'];
+modalTestCtrl.$inject = ['upModalAlertService'];
 
-function modalTestCtrl(UfModalAlertService) {
+function modalTestCtrl(upModalAlertService) {
 
 	var self = this;
 
@@ -14,18 +14,15 @@ function modalTestCtrl(UfModalAlertService) {
 			bodyText: 'Are you sure of it ?',
 			type: type
 		};
-		console.log(modalOptions);
 
-		UfModalAlertService.confirm(modalOptions).then(function (result) {
+		upModalAlertService.confirm(modalOptions).then(function (result) {
 			console.log('Yes');
 		});	
 	};
 
 	self.showAlertModal = function(type){
-		
-		console.log(type);
 
-		UfModalAlertService.alert({type: type}).then(function (result) {
+		upModalAlertService.alert({type: type}).then(function (result) {
 			console.log('Yes');
 		});	
 	};

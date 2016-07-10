@@ -1,8 +1,8 @@
-angular.module('upFrota').service('UfModalAlertService', UfModalAlertService);
+angular.module('upFrota').service('upModalAlertService', upModalAlertService);
 
-UfModalAlertService.$inject = ['$uibModal']
+upModalAlertService.$inject = ['$uibModal']
 
-function UfModalAlertService($uibModal) {
+function upModalAlertService($uibModal) {
 
     var self = this;
 
@@ -10,7 +10,7 @@ function UfModalAlertService($uibModal) {
         backdrop: 'static',
         keyboard: true,
         modalFade: true,
-        templateUrl: 'templates/shared/modal-alert/UfModalAlertTemplate.html'
+        templateUrl: 'templates/shared/modal-alert/upModalAlertTemplate.html'
     };
 
     self.modalOptions = {
