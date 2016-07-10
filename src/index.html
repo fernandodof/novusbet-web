@@ -6,12 +6,14 @@
 
   <title>RDash AngularJS</title>
   <!-- STYLES -->
-  <!-- build:css lib/css/vendor.min.css -->
+  <!-- build:css styles/vendor.min.css -->
   <link rel="stylesheet" type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="../bower_components/rdash-ui/dist/css/rdash.css">
   <!-- endbuild -->
-  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <!--build:css styles/compiled/styles.css -->
+  <link rel="stylesheet" type="text/css" href="styles/compiled/styles.css">
+  <!-- endbuild -->
 </head>
 <body ng-controller="MasterCtrl" class="yellow-theme">
   <div id="page-wrapper" ng-class="{'open': toggle}" ng-cloak>
@@ -39,7 +41,18 @@
 <script type="text/javascript" src="../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <!-- endbuild -->
 <!-- Custom Scripts -->
-<script type="text/javascript" src="js/custom.min.js"></script>
-
+<!-- build:js js/custom.js-->
+<script type="text/javascript" src="app/app.module.js"></script>
+<script type="text/javascript" src="app/app.routes.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/controllers/master-ctrl.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/controllers/alert-ctrl.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/directives/widget.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/directives/widget-header.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/directives/loading.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/directives/widget-body.js"></script>
+<script type="text/javascript" src="app/shared/rdash-files/directives/widget-footer.js"></script>
+<script type="text/javascript" src="app/shared/modal-alert/UfModalAlertService.js"></script>
+<script type="text/javascript" src="app/components/modals-test/modal-test.js"></script>
+<!-- endbuild -->
 </body>
 </html>

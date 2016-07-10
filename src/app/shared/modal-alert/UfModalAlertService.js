@@ -19,11 +19,33 @@ function UfModalAlertService($uibModal) {
         headerText: 'Confirm',
         bodyText: 'Perform action?',
         showCancel: false,
-        type: ''
+        type: '',
+        icon: 'fa fa-info'
+    };
+
+    self.getIcon = function(type) {
+
+        var icon = 'fa fa-info';
+
+        switch (type) {
+            case 'success':
+                icon = 'fa fa-check';
+                break;
+            case 'warning':
+                icon = 'fa fa-exclamation-triangle';
+                break;
+            case 'danger':
+                icon = 'fa fa-fire';
+                break;
+        }
+        console.log(type);
+        return icon;
+
     };
 
     self.confirm = function (customModalOptions, customModalDefaults) {
-        self.modalOptions.showCancel = true; 
+        self.modalOptions.showCancel = true;
+
         if (!customModalDefaults) {
             customModalDefaults = {};
         }
@@ -33,6 +55,9 @@ function UfModalAlertService($uibModal) {
 
     self.alert = function (customModalOptions, customModalDefaults) {
         self.modalOptions.showCancel = false;
+        self.modalOptions.headerText = 'Alert';
+        self.modalOptions.bodyText = 'This happened';
+
         if (!customModalDefaults) {
             customModalDefaults = {};
         }
@@ -41,11 +66,17 @@ function UfModalAlertService($uibModal) {
     };
 
     self.show = function (customModalDefaults, customModalOptions) {
+        console.log(customModalOptions);
         var tempModalDefaults = {};
         var tempModalOptions = {};
 
+        console.log(self.getIcon(customModalOptions.type));
+
+        self.modalOptions.icon = self.getIcon(customModalOptions.type);
+        
         angular.extend(tempModalDefaults, self.modalDefaults, customModalDefaults);
         angular.extend(tempModalOptions, self.modalOptions, customModalOptions);
+
 
         if (!tempModalDefaults.controller) {
             tempModalDefaults.controller = modalCtrl;

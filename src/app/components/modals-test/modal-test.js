@@ -6,26 +6,26 @@ function modalTestCtrl(UfModalAlertService) {
 
 	var self = this;
 
-	self.modalConfirmOptions = {
-		closeButtonText: 'Cancel',
-		actionButtonText: 'Yes',
-		headerText: 'Confirm',
-		bodyText: 'Are you sure of it ?'
-	};
+	self.showConfirmModal = function(type) {
+		var modalOptions = {
+			closeButtonText: 'Cancel',
+			actionButtonText: 'Yes',
+			headerText: 'Confirm',
+			bodyText: 'Are you sure of it ?',
+			type: type
+		};
+		console.log(modalOptions);
 
-	self.modalAlertOptions = {
-		bodyText: 'Are you sure of it ?',
-		type: 'danger'
-	};
-
-	self.showConfirmModal = function(){
-		UfModalAlertService.confirm(self.modalConfirmOptions).then(function (result) {
+		UfModalAlertService.confirm(modalOptions).then(function (result) {
 			console.log('Yes');
 		});	
 	};
 
-	self.showAlertModal = function(){
-		UfModalAlertService.alert(self.modalAlertOptions).then(function (result) {
+	self.showAlertModal = function(type){
+		
+		console.log(type);
+
+		UfModalAlertService.alert({type: type}).then(function (result) {
 			console.log('Yes');
 		});	
 	};
