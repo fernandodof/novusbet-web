@@ -2,6 +2,8 @@
 	angular.module('upFrota', [
 		'ui.bootstrap', 
 		'ui.router', 
-		'ngCookies'
+		'ngCookies',
+		'smart-table',
+		'toggle-switch'
 	]);
 })();

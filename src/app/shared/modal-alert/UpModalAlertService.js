@@ -1,8 +1,8 @@
-angular.module('upFrota').service('upModalAlertService', upModalAlertService);
+angular.module('upFrota').service('UpModalAlertService', UpModalAlertService);
 
-upModalAlertService.$inject = ['$uibModal']
+UpModalAlertService.$inject = ['$uibModal']
 
-function upModalAlertService($uibModal) {
+function UpModalAlertService($uibModal) {
 
     var self = this;
 
@@ -38,7 +38,6 @@ function upModalAlertService($uibModal) {
                 icon = 'fa fa-fire';
                 break;
         }
-        console.log(type);
         return icon;
 
     };
@@ -66,11 +65,8 @@ function upModalAlertService($uibModal) {
     };
 
     self.show = function (customModalDefaults, customModalOptions) {
-        console.log(customModalOptions);
         var tempModalDefaults = {};
         var tempModalOptions = {};
-
-        console.log(self.getIcon(customModalOptions.type));
 
         self.modalOptions.icon = self.getIcon(customModalOptions.type);
         
