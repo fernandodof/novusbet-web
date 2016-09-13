@@ -1,13 +1,13 @@
-(function(){
+(function() {
     /**
      * Widget Body Directive
      */
 
-     angular
-     .module('upFrota')
-     .directive('rdWidgetBody', rdWidgetBody);
+    angular
+        .module('novusBet')
+        .directive('rdWidgetBody', rdWidgetBody);
 
-     function rdWidgetBody() {
+    function rdWidgetBody() {
         var directive = {
             requires: '^rdWidget',
             scope: {

@@ -1,10 +1,10 @@
-(function(){
+(function() {
     /**
      * Alerts Controller
      */
 
     angular
-        .module('upFrota')
+        .module('novusBet')
         .controller('AlertsCtrl', ['$scope', AlertsCtrl]);
 
     function AlertsCtrl($scope) {

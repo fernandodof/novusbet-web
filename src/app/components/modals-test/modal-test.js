@@ -1,30 +1,35 @@
-angular.module('upFrota').controller('ModalTest', modalTestCtrl);
+(function() {
 
-modalTestCtrl.$inject = ['UpModalAlertService'];
+    angular.module('novusBet').controller('ModalTest', modalTestCtrl);
 
-function modalTestCtrl(UpModalAlertService) {
+    modalTestCtrl.$inject = ['ModalAlertService'];
 
-	var self = this;
+    function modalTestCtrl(ModalAlertService) {
 
-	self.showConfirmModal = function(type) {
-		var modalOptions = {
-			closeButtonText: 'Cancel',
-			actionButtonText: 'Yes',
-			headerText: 'Confirm',
-			bodyText: 'Are you sure of it ?',
-			type: type
-		};
+        var self = this;
 
-		UpModalAlertService.confirm(modalOptions).then(function (result) {
-			console.log('Yes');
-		});	
-	};
+        self.showConfirmModal = function(type) {
+            var modalOptions = {
+                closeButtonText: 'Cancel',
+                actionButtonText: 'Yes',
+                headerText: 'Confirm',
+                bodyText: 'Are you sure of it ?',
+                type: type
+            };
 
-	self.showAlertModal = function(type){
+            ModalAlertService.confirm(modalOptions).then(function(result) {
+                console.log(result);
+            });
+        };
 
-		UpModalAlertService.alert({type: type}).then(function (result) {
-			console.log('Yes');
-		});	
-	};
+        self.showAlertModal = function(type) {
 
-}
+            ModalAlertService.alert({
+                type: type
+            }).then(function(result) {
+                console.log(result);
+            });
+        };
+
+    }
+})();

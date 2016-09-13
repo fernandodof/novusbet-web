@@ -1,10 +1,10 @@
-(function(){
+(function() {
     /**
      * Widget Header Directive
      */
 
     angular
-        .module('upFrota')
+        .module('novusBet')
         .directive('rdWidgetHeader', rdWidgetTitle);
 
     function rdWidgetTitle() {

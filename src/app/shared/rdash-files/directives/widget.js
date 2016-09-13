@@ -1,21 +1,21 @@
-(function(){
+(function() {
     /**
      * Widget Directive
      */
 
-     angular
-     .module('upFrota')
-     .directive('rdWidget', rdWidget);
+    angular
+        .module('novusBet')
+        .directive('rdWidget', rdWidget);
 
-     function rdWidget() {
-         var directive = {
-             transclude: true,
-             template: '<div class="widget" ng-transclude></div>',
-             restrict: 'EA'
-         };
-         return directive;
+    function rdWidget() {
+        var directive = {
+            transclude: true,
+            template: '<div class="widget" ng-transclude></div>',
+            restrict: 'EA'
+        };
+        return directive;
 
-         function link(scope, element, attrs) {
+        function link(scope, element, attrs) {
             /* */
         }
     };
