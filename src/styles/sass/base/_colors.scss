@@ -47,7 +47,7 @@ $blue-theme-colors: (
 );
 
 @function light-blue-theme($key){
-	@return map-get($light-theme-colors, $key);
+	@return map-get($blue-theme-colors, $key);
 }
 
 $yellow-theme-colors: (
